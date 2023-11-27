@@ -1,0 +1,97 @@
+$background-color: rgba(35, 35, 35, 1)
+$input-link-color: rgba(237, 148, 148, 1)
+$btn-color: rgba(202, 90, 90, 1)
+
+$lg-screen-width: 992px
+$md-screen-width: 768px
+$sm-screen-width: 576px
+$text-color: white
+$margin-bottom: 8px
+
+.header-navbar
+    background-color: $background-color
+    height: 80px
+
+.container
+    padding: 20px 12px
+
+.nav-main
+    align-items: center
+    display: flex
+    flex-direction: wrap
+    justify-content: center
+    @media  (min-width: $lg-screen-width)
+        justify-content: flex-start
+        
+.navbar-brand
+    display: flex
+    align-items: center
+    margin-bottom: 8px 
+    @media (min-width: $lg-screen-width)
+        margin-bottom: 0
+    color: $text-color
+
+.img-logo
+    height: 40px
+    margin-right: 8px
+    background-color: rgba(255, 255, 255, 0.5)
+    border-radius: 8px
+
+
+.nav-list
+    display: flex
+    flex-direction: row
+    width: 100%
+    margin-bottom: $margin-bottom
+    justify-content: center
+    @media (min-width: $lg-screen-width)
+        width: auto
+        margin-right: auto
+    @media (min-width: $md-screen-width)
+        margin-bottom: 0
+
+.nav-item
+    list-style: none
+
+
+.nav-link
+    text-decoration: none
+    padding: 8px
+    color: $text-color
+
+.nav-item a:hover
+    color: $input-link-color
+
+
+.form
+    width: 100%
+    margin-bottom: 12px
+    @media (min-width: $lg-screen-width)
+        width: auto
+        margin-bottom: 0
+        margin-right: 12px
+
+.form-input
+    background-color: $input-link-color
+    width: 300px
+    height: 40px
+    border-radius: 8px
+
+.nav-btn
+    justify-content: around
+
+.nav-btn a
+    text-decoration: none
+    color: $text-color
+    background-color: $btn-color
+    height: 40px
+    border-radius: 8px
+    padding: 10px
+    margin-right: 5px
+
+.nav-btn a:hover
+    background-color: $input-link-color
+    
+.form .form-input::placeholder
+    color: $text-color
+
