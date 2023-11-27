@@ -2,6 +2,9 @@ import {Component, ViewChild} from '@angular/core';
 import {HubConnection, HubConnectionBuilder, HubConnectionState} from "@microsoft/signalr";
 import {ActivatedRoute} from '@angular/router';
 import {PlayerComponent} from "../../player/player.component";
+import {environment} from "../../../../environments/environment.development";
+import {User} from "../../../_models/user";
+import {AccountService} from "../../../_services/account.service";
 
 @Component({
   selector: 'app-play',
@@ -16,12 +19,20 @@ export class PlayComponent {
   private readonly connection : HubConnection;
   private readonly roomId : string | null;
   public connected : boolean;
+  private user: User | null;
 
-  constructor(private route: ActivatedRoute) {
+
+  constructor(private route: ActivatedRoute,
+              private accountService: AccountService) {
+    this.user = this.accountService.userValue;
     this.roomId = this.route.snapshot.paramMap.get('roomId');
+    let token : string | undefined = this.user?.Token
 
     this.connection = new HubConnectionBuilder()
-      .withUrl("http://localhost:32768/player")
+      .withUrl(`${environment.apiUrl}/player`, {
+        accessTokenFactory(): string | Promise<string> {
+          return token || "";
+        }})
       .build();
 
     this.connection.start().then(() => {
