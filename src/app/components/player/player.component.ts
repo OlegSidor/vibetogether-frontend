@@ -78,6 +78,11 @@ export class PlayerComponent {
 
     this.player.on("canplaythrough",  async (e : any) => await this.userIsReady());
     this.player.on("waiting",  async (e : any) => await this.waitForAll());
+
+    this.player.fluid(true);
+    this.player.fill(true);
+    this.player.responsive(true);
+    this.player.breakpoints(true);
   }
 
 
