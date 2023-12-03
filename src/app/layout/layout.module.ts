@@ -8,6 +8,7 @@ import { PlayComponent } from '../components/Pages/play/play.component';
 import { LoginComponent } from '../components/Pages/login/login.component';
 import { RegisterComponent } from '../components/Pages/register/register.component';
 import { PlayerComponent } from '../components/player/player.component';
+import { RoomcreatorComponent } from '../components/roomcreator/roomcreator.component';
 import { HeaderComponent } from './header/header.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
@@ -20,7 +21,8 @@ import {HttpClientModule} from "@angular/common/http";
     PlayerComponent,
     PlayComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RoomcreatorComponent
   ],
   imports: [
     CommonModule,

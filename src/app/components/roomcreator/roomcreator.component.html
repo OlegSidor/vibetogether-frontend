@@ -1,0 +1,4 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-inline m-2">
+  <input id="videoUrl" formControlName="url" type="search" class="form-control" placeholder="Посилання на відео...">
+  <button type="submit" class="btn mt-4" id="createRoom" *ngIf="showSubmitButton">Створити свою кімнату</button>
+</form>

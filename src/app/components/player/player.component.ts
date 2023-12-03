@@ -1,5 +1,6 @@
 import {Component, ElementRef, Input, ViewChild, ViewEncapsulation} from '@angular/core';
 import * as videojs from 'video.js'
+import {PlayerOptions} from "../../_models/player-options";
 
 @Component({
   selector: 'app-player',
@@ -9,12 +10,7 @@ import * as videojs from 'video.js'
 })
 export class PlayerComponent {
 
-  @Input() options: {
-    sources: {
-      src: string,
-      type: string,
-    }[],
-  };
+  @Input() options: PlayerOptions;
 
   @Input() playForAll : () => Promise<void>;
   @Input() pauseForAll : () => Promise<void>;

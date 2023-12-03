@@ -8,6 +8,7 @@ import {RouterModule} from '@angular/router';
 import {JwtInterceptor} from "./_helpers/jwt.interceptor";
 import {ErrorInterceptor} from "./_helpers/error.interceptor";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {HTTP_INTERCEPTORS} from "@angular/common/http";
     LayoutRoutingModule,
     BrowserModule,
     LayoutModule,
+    ClipboardModule,
     RouterModule.forRoot([]),
   ],
   providers: [

@@ -3,17 +3,21 @@
   <div class="player-wrapper d-flex justify-content-around py-5">
     <div class="player w-50">
       <div class="backdrop-brush rounded shadow">
+        <div *ngIf="waitingForAll" class="waiting border border-dark border-5 d-flex justify-content-center text-white h-100 h1 position-absolute z-3 bg-black align-items-center w-100 flex-column">
+          <span>Очіуквання всіх глядачів</span>
+          <span class="loader my-5"></span>
+        </div>
         <app-player #player *ngIf="connected"
-                    [options]="{sources: [{ src: 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_30mb.mp4', type: 'video/mp4' }]}"
+                    [options]="playerOptions"
                     [playForAll]="play" [pauseForAll]="pause" [changeTimeForAll]="changeTime"
                     [setRoomTime]="setRoomTime"
                     [waitForAll]="waitForAll" [userIsReady]="isReady"></app-player>
       </div>
       <form id="copyroomurl" class="d-flex align-items-center mt-4 mb-1 input-group">
-        <button type="button" class="btn h-100"><img class="img-fluid h-100" src="/assets/images/invitetoroom.svg">
+        <button type="button" (click)="copyRoomUrl()" class="btn h-100"><img class="img-fluid h-100" src="/assets/images/invitetoroom.svg">
         </button>
-        <input type="text" class="form-control h-100" disabled value="URL">
-        <button type="button" class="btn h-100"><img class="img-fluid h-100" src="/assets/images/copy.svg"></button>
+        <input type="text" class="form-control h-100" disabled value="URL" [value]="currentRoomUrl">
+        <button type="button" (click)="copyRoomUrl()" class="btn h-100"><img class="img-fluid h-100" src="/assets/images/copy.svg"></button>
 
       </form>
 
