@@ -1,4 +1,4 @@
 export const environment = {
-  apiUrl: "http://localhost:5200",
+  apiUrl: "http://api.vibetogether.xyz",
   seekTimeOut: 500
 };
